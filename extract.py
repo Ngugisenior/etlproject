@@ -5,6 +5,7 @@ import os
 from constructors import Constructor
 from engine import session
 from sqlalchemy import text
+from datetime import datetime
 
 
 def query_api(endpoint:str, params:None):
@@ -60,3 +61,5 @@ for x in constructors():
 truncate_table('constructor')
 bulk_insert_constructor(constructors())
 
+cmd = f"git add . && git commit -m '{datetime.now()}'"
+os.system(cmd)
