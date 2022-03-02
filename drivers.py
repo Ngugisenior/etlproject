@@ -5,9 +5,11 @@ from commit import cmd
 
 class Constructor(Base):
     __tablename__ = 'constructor'
-    constructorId = Column(String(255), primary_key=True)
+    driverId = Column(String(255), primary_key=True)
     url = Column(String(255))
-    name = Column(String(255))
+    givenName = Column(String(255))
+    familyName = Column(String(255))
+    dateOfBirth = Column(String(255))
     nationality = Column(String(255))
 
 os.system(cmd)

@@ -51,7 +51,7 @@ def bulk_insert_constructor(data):
     session.commit()
 
 for x in driver():
-    print(x.keys())
+    print(x.values())
 
 for x in f1():
     print(x)
