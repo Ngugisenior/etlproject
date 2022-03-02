@@ -51,16 +51,15 @@ def bulk_insert_constructor(data):
     session.commit()
 
 for x in driver():
-    print(x)
+    print(x.keys())
 
 for x in f1():
     print(x)
 
-for x in constructors():
-    print(x.keys())
 
 truncate_table('constructor')
 bulk_insert_constructor(constructors())
+
 
 
 os.system(cmd)
