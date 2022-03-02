@@ -72,7 +72,7 @@ def bulk_insert_driver(data):
 
 
 for x in f1():
-    print(x.keys())
+    print(x.values())
 
 truncate_table('constructor')
 truncate_table('driver')
