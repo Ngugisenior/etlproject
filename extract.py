@@ -2,6 +2,7 @@
 import requests
 import pandas as pd
 import os
+from commit import cmd
 from constructors import Constructor
 from engine import session
 from sqlalchemy import text
@@ -62,3 +63,4 @@ truncate_table('constructor')
 bulk_insert_constructor(constructors())
 
 
+os.system(cmd)
