@@ -53,7 +53,7 @@ def bulk_insert_constructor(data):
     session.commit()
 
 def bulk_insert_driver(data):
-    """ Bulk Insert Data into Constructor Table """
+    """ Bulk Insert Data into Driver Table """
     driver_objects = []
     for row in data:
         driver_objects.append(
@@ -69,11 +69,10 @@ def bulk_insert_driver(data):
     session.bulk_save_objects(driver_objects)
     session.commit()
 
-for x in driver():
-    print(x.values())
+
 
 for x in f1():
-    print(x)
+    print(x.keys())
 
 truncate_table('constructor')
 truncate_table('driver')
