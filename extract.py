@@ -57,7 +57,7 @@ for x in f1():
     print(x)
 
 truncate_table('constructor')
-truncate_table('drivers')
+truncate_table('driver')
 
 bulk_insert_constructor(constructors())
 
