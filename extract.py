@@ -8,6 +8,7 @@ from drivers import Driver
 from engine import session
 from sqlalchemy import text
 from datetime import datetime
+import transforms
 
 
 def query_api(endpoint:str, params:None):
@@ -61,7 +62,7 @@ def bulk_insert_driver(data):
                 url = row['url'],
                 givenName = row['givenName'],
                 familyName = row['familyName'],
-                dateOfBirth = row['dateOfBirth'],
+                dateOfBirth = transforms.parse_dates(row['dateOfBirth']),
                 nationality = row['nationality']
             )
         )
