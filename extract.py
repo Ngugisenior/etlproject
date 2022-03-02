@@ -61,5 +61,4 @@ for x in constructors():
 truncate_table('constructor')
 bulk_insert_constructor(constructors())
 
-cmd = f"git add . && git commit -m '{datetime.now()}'"
-os.system(cmd)
+
