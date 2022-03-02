@@ -4,6 +4,7 @@ import pandas as pd
 import os
 from commit import cmd
 from constructors import Constructor
+from drivers import Driver
 from engine import session
 from sqlalchemy import text
 from datetime import datetime
@@ -50,6 +51,23 @@ def bulk_insert_constructor(data):
     session.bulk_save_objects(constructor_objects)
     session.commit()
 
+def bulk_insert_driver(data):
+    """ Bulk Insert Data into Constructor Table """
+    driver_objects = []
+    for row in data:
+        driver_objects.append(
+            Driver(
+                driverId = row['driverId'],
+                url = row['url'],
+                givenName = row['givenName'],
+                familyName = row['familyName'],
+                dateOfBirth = row['dateOfBirth'],
+                nationality = row['nationality']
+            )
+        )
+    session.bulk_save_objects(driver_objects)
+    session.commit()
+
 for x in driver():
     print(x.values())
 
@@ -60,6 +78,7 @@ truncate_table('constructor')
 truncate_table('driver')
 
 bulk_insert_constructor(constructors())
+bulk_insert_driver(driver())
 
 
 
